@@ -3,6 +3,7 @@ import { EXERCISES_52 } from "./knowledge/52-exercises";
 import { COMPLEX_CHALLENGE_10X10 } from "./knowledge/10x10-complex-challenge";
 import { ISSA_6_WEEK_PROGRAM } from "./knowledge/issa-6-week-program";
 import { KETTLEBELL_BASICS_101 } from "./knowledge/kettlebell-basics-101";
+import { WEEKLY_PROGRAM_TEMPLATE } from "./knowledge/weekly-program-template";
 
 /**
  * Mirrors the custom instructions of the "Kettle Workouts" Claude project.
@@ -49,6 +50,10 @@ export const PROJECT_KNOWLEDGE: KnowledgeDoc[] = [
   {
     title: "10x10 Complex Challenge (AJ Holland, Doc's Fitness)",
     content: COMPLEX_CHALLENGE_10X10,
+  },
+  {
+    title: "Reference weekly program (~30 min/day, one kettlebell)",
+    content: WEEKLY_PROGRAM_TEMPLATE,
   },
 ];
 
