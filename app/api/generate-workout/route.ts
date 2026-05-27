@@ -1,7 +1,8 @@
+import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
-import OpenAI from "openai";
 import {
-  buildPrompt,
+  buildSystemPrompt,
+  buildUserPrompt,
   type Duration,
   type Equipment,
   type Focus,
@@ -62,10 +63,10 @@ function parseInputs(body: unknown): WorkoutInputs | null {
 }
 
 export async function POST(req: Request) {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Server is missing OPENAI_API_KEY." },
+      { error: "Server is missing ANTHROPIC_API_KEY." },
       { status: 500 },
     );
   }
@@ -85,21 +86,29 @@ export async function POST(req: Request) {
     );
   }
 
-  const { system, user } = buildPrompt(inputs);
-  const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
-  const client = new OpenAI({ apiKey });
+  const model = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6";
+  const client = new Anthropic({ apiKey });
 
   try {
-    const completion = await client.chat.completions.create({
+    const response = await client.messages.create({
       model,
-      temperature: 0.6,
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: user },
+      max_tokens: 2048,
+      system: [
+        {
+          type: "text",
+          text: buildSystemPrompt(),
+          cache_control: { type: "ephemeral" },
+        },
       ],
+      messages: [{ role: "user", content: buildUserPrompt(inputs) }],
     });
 
-    const workout = completion.choices[0]?.message?.content?.trim();
+    const workout = response.content
+      .filter((block): block is Anthropic.TextBlock => block.type === "text")
+      .map((block) => block.text)
+      .join("")
+      .trim();
+
     if (!workout) {
       return NextResponse.json(
         { error: "The model returned an empty response." },
@@ -109,6 +118,24 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ workout });
   } catch (err) {
+    if (err instanceof Anthropic.AuthenticationError) {
+      return NextResponse.json(
+        { error: "Invalid ANTHROPIC_API_KEY." },
+        { status: 500 },
+      );
+    }
+    if (err instanceof Anthropic.RateLimitError) {
+      return NextResponse.json(
+        { error: "Rate limited by Anthropic. Try again in a moment." },
+        { status: 429 },
+      );
+    }
+    if (err instanceof Anthropic.APIError) {
+      return NextResponse.json(
+        { error: err.message },
+        { status: err.status ?? 502 },
+      );
+    }
     const message =
       err instanceof Error ? err.message : "Unknown error generating workout.";
     return NextResponse.json({ error: message }, { status: 502 });

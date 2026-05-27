@@ -1,4 +1,4 @@
-import { exerciseLibraryForPrompt } from "./exercises";
+import { renderProjectSystemPrompt } from "./projectContext";
 
 export type WorkoutType =
   | "full-body-conditioning"
@@ -72,46 +72,13 @@ const LABELS = {
   },
 } as const;
 
-export const SYSTEM_PROMPT = `You are a kettlebell programming assistant. You write practical, safe, time-boxed kettlebell workouts in a plainspoken tone.
-
-Rules you always follow:
-- Keep workouts time-boxed. Default structure: ~5 min warm-up, ~20 min main block, ~5 min finisher or cooldown. Scale proportionally to the requested duration.
-- Use simple kettlebell patterns: swing/hinge, goblet squat, clean, press/push press, row, reverse lunge, carry, halo, Turkish get-up only when appropriate.
-- No more than 4-6 main exercises per workout. Prefer EMOM, AMRAP, circuits, ladders, and complexes. Include explicit rest periods. Preserve form quality.
-- Beginner workouts must avoid snatches, complex flows, and high-rep overhead work.
-- Include short technique cues for swings, cleans, squats, presses, and lunges when they appear in the workout.
-- Add a brief note to stop or reduce load if form breaks down.
-- Do not make medical claims. Do not invent citations. Do not be overly enthusiastic. No emojis. No hype.
-- Respect the requested equipment. If the user has one kettlebell, do not program movements that require two.
-- Output Markdown that follows the exact structure given in the user message. Use the headings exactly as listed. Do not add other top-level sections.
-
-You select movements from the following exercise library. Use the exact names from this list when naming exercises in the workout, and base the technique cues in Exercise Notes on these descriptions. You may include common warm-up/cooldown movements (light cardio, mobility drills, stretches) that aren't in the library only when they fit the warm-up or cooldown.
-
-${exerciseLibraryForPrompt()}`;
-
-export function buildUserPrompt(inputs: WorkoutInputs): string {
-  const focusLine =
-    inputs.focus === "none"
-      ? "No specific focus beyond the workout type."
-      : LABELS.focus[inputs.focus];
-
-  return `Generate one kettlebell workout for me.
-
-Inputs:
-- Workout type: ${LABELS.workoutType[inputs.workoutType]}
-- Duration: ${inputs.duration} minutes
-- Skill level: ${LABELS.skillLevel[inputs.skillLevel]}
-- Equipment: ${LABELS.equipment[inputs.equipment]}
-- Intensity: ${LABELS.intensity[inputs.intensity]}
-- Optional focus: ${focusLine}
-
-Output the workout as Markdown using EXACTLY this structure and heading levels:
+const OUTPUT_FORMAT_INSTRUCTIONS = `When the user asks for a workout via this web app, output Markdown that follows EXACTLY this structure and heading levels. Use the headings as listed. Do not add other top-level sections.
 
 # [Workout Title]
 
-**Duration:** ${inputs.duration} minutes
-**Equipment:** ${LABELS.equipment[inputs.equipment]}
-**Level:** ${LABELS.skillLevel[inputs.skillLevel]}
+**Duration:** <minutes>
+**Equipment:** <equipment>
+**Level:** <level>
 **Goal:** <one short sentence>
 
 ## Warm-up
@@ -136,12 +103,25 @@ One or two short technique cues per main exercise.
 - Harder option: ...
 - Suggested kettlebell weight: brief guidance for the requested skill level (give a range in kg or lb, not a single number). Add "stop or reduce load if form breaks down."
 
-Keep the whole thing under ~450 words. Do not add any sections beyond the ones above.`;
+Keep the whole thing under ~450 words.`;
+
+export function buildSystemPrompt(): string {
+  return `${renderProjectSystemPrompt()}\n\n---\n\n# Output format\n\n${OUTPUT_FORMAT_INSTRUCTIONS}`;
 }
 
-export function buildPrompt(inputs: WorkoutInputs) {
-  return {
-    system: SYSTEM_PROMPT,
-    user: buildUserPrompt(inputs),
-  };
+export function buildUserPrompt(inputs: WorkoutInputs): string {
+  const focusLine =
+    inputs.focus === "none"
+      ? "No specific focus beyond the workout type."
+      : LABELS.focus[inputs.focus];
+
+  return `Generate one kettlebell workout for me.
+
+Inputs:
+- Workout type: ${LABELS.workoutType[inputs.workoutType]}
+- Duration: ${inputs.duration} minutes
+- Skill level: ${LABELS.skillLevel[inputs.skillLevel]}
+- Equipment: ${LABELS.equipment[inputs.equipment]}
+- Intensity: ${LABELS.intensity[inputs.intensity]}
+- Optional focus: ${focusLine}`;
 }
