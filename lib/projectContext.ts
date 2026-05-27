@@ -4,6 +4,9 @@ import { COMPLEX_CHALLENGE_10X10 } from "./knowledge/10x10-complex-challenge";
 import { ISSA_6_WEEK_PROGRAM } from "./knowledge/issa-6-week-program";
 import { KETTLEBELL_BASICS_101 } from "./knowledge/kettlebell-basics-101";
 import { WEEKLY_PROGRAM_TEMPLATE } from "./knowledge/weekly-program-template";
+import { POSTER_EAZY_HOWTO } from "./knowledge/poster-eazy-howto";
+import { POSTER_GRAND_BASICS } from "./knowledge/poster-grand-basics";
+import { POSTER_GB_LEVELS } from "./knowledge/poster-gb-levels";
 
 /**
  * Mirrors the custom instructions of the "Kettle Workouts" Claude project.
@@ -54,6 +57,18 @@ export const PROJECT_KNOWLEDGE: KnowledgeDoc[] = [
   {
     title: "Reference weekly program (~30 min/day, one kettlebell)",
     content: WEEKLY_PROGRAM_TEMPLATE,
+  },
+  {
+    title: "Exercise poster: Eazy How To (by body region, with goal rep/set ranges)",
+    content: POSTER_EAZY_HOWTO,
+  },
+  {
+    title: "Exercise poster: Grand Basics (by body region)",
+    content: POSTER_GRAND_BASICS,
+  },
+  {
+    title: "Exercise poster: GB Personal Training (by skill level, with muscle targets and goal reps)",
+    content: POSTER_GB_LEVELS,
   },
 ];
 
