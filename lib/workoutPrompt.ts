@@ -1,3 +1,5 @@
+import { exerciseLibraryForPrompt } from "./exercises";
+
 export type WorkoutType =
   | "full-body-conditioning"
   | "full-body-strength"
@@ -81,7 +83,11 @@ Rules you always follow:
 - Add a brief note to stop or reduce load if form breaks down.
 - Do not make medical claims. Do not invent citations. Do not be overly enthusiastic. No emojis. No hype.
 - Respect the requested equipment. If the user has one kettlebell, do not program movements that require two.
-- Output Markdown that follows the exact structure given in the user message. Use the headings exactly as listed. Do not add other top-level sections.`;
+- Output Markdown that follows the exact structure given in the user message. Use the headings exactly as listed. Do not add other top-level sections.
+
+You select movements from the following exercise library. Use the exact names from this list when naming exercises in the workout, and base the technique cues in Exercise Notes on these descriptions. You may include common warm-up/cooldown movements (light cardio, mobility drills, stretches) that aren't in the library only when they fit the warm-up or cooldown.
+
+${exerciseLibraryForPrompt()}`;
 
 export function buildUserPrompt(inputs: WorkoutInputs): string {
   const focusLine =
