@@ -1,4 +1,8 @@
 import { exerciseLibraryForPrompt } from "./exercises";
+import { EXERCISES_52 } from "./knowledge/52-exercises";
+import { COMPLEX_CHALLENGE_10X10 } from "./knowledge/10x10-complex-challenge";
+import { ISSA_6_WEEK_PROGRAM } from "./knowledge/issa-6-week-program";
+import { KETTLEBELL_BASICS_101 } from "./knowledge/kettlebell-basics-101";
 
 /**
  * Mirrors the custom instructions of the "Kettle Workouts" Claude project.
@@ -27,8 +31,24 @@ export interface KnowledgeDoc {
 
 export const PROJECT_KNOWLEDGE: KnowledgeDoc[] = [
   {
-    title: "Exercise Library",
+    title: "Exercise Library (curated)",
     content: exerciseLibraryForPrompt(),
+  },
+  {
+    title: "52 Kettlebell Exercises (GB Personal Training)",
+    content: EXERCISES_52,
+  },
+  {
+    title: "Kettlebell Basics 101 (BestKettlebellWorkout.com)",
+    content: KETTLEBELL_BASICS_101,
+  },
+  {
+    title: "ISSA 6-Week Kettlebell Program (Josh Bryant)",
+    content: ISSA_6_WEEK_PROGRAM,
+  },
+  {
+    title: "10x10 Complex Challenge (AJ Holland, Doc's Fitness)",
+    content: COMPLEX_CHALLENGE_10X10,
   },
 ];
 
