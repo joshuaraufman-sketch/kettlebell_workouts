@@ -1,0 +1,127 @@
+import { renderProjectSystemPrompt } from "./projectContext";
+
+export type WorkoutType =
+  | "full-body-conditioning"
+  | "full-body-strength"
+  | "upper-body-strength"
+  | "lower-body-strength"
+  | "beginner"
+  | "recovery-mobility";
+
+export type SkillLevel = "beginner" | "intermediate" | "advanced";
+
+export type Equipment =
+  | "one-kettlebell"
+  | "two-kettlebells"
+  | "kettlebell-plus-bodyweight";
+
+export type Intensity = "easy" | "moderate" | "hard";
+
+export type Focus =
+  | "none"
+  | "fat-loss"
+  | "strength"
+  | "work-capacity"
+  | "mobility"
+  | "posterior-chain"
+  | "core";
+
+export type Duration = 15 | 20 | 30 | 45;
+
+export interface WorkoutInputs {
+  workoutType: WorkoutType;
+  duration: Duration;
+  skillLevel: SkillLevel;
+  equipment: Equipment;
+  intensity: Intensity;
+  focus: Focus;
+}
+
+const LABELS = {
+  workoutType: {
+    "full-body-conditioning": "Full body conditioning",
+    "full-body-strength": "Full body strength",
+    "upper-body-strength": "Upper body strength",
+    "lower-body-strength": "Lower body strength",
+    beginner: "Beginner",
+    "recovery-mobility": "Recovery / mobility",
+  },
+  skillLevel: {
+    beginner: "Beginner",
+    intermediate: "Intermediate",
+    advanced: "Advanced",
+  },
+  equipment: {
+    "one-kettlebell": "One kettlebell",
+    "two-kettlebells": "Two kettlebells",
+    "kettlebell-plus-bodyweight": "Kettlebell + bodyweight",
+  },
+  intensity: {
+    easy: "Easy",
+    moderate: "Moderate",
+    hard: "Hard",
+  },
+  focus: {
+    none: "No specific focus",
+    "fat-loss": "Fat loss / conditioning",
+    strength: "Strength",
+    "work-capacity": "Work capacity",
+    mobility: "Mobility",
+    "posterior-chain": "Posterior chain",
+    core: "Core",
+  },
+} as const;
+
+const OUTPUT_FORMAT_INSTRUCTIONS = `When the user asks for a workout via this web app, output Markdown that follows EXACTLY this structure and heading levels. Use the headings as listed. Do not add other top-level sections.
+
+# [Workout Title]
+
+**Duration:** <minutes>
+**Equipment:** <equipment>
+**Level:** <level>
+**Goal:** <one short sentence>
+
+## Warm-up
+
+A short list of exercises with reps or time, scaled to the warm-up portion of the total duration.
+
+## Main Workout
+
+State the format clearly (EMOM, AMRAP, circuit, ladder, complex, etc.), then list the 4-6 main exercises with reps/time, rounds, and rest. Keep it tight.
+
+## Finisher
+
+A short conditioning or carry-based finisher scaled to fit the remaining time. If the workout type is recovery/mobility, replace this with a cooldown.
+
+## Exercise Notes
+
+One or two short technique cues per main exercise.
+
+## Scaling
+
+- Easier option: ...
+- Harder option: ...
+- Suggested kettlebell weight: brief guidance for the requested skill level (give a range in kg or lb, not a single number). Add "stop or reduce load if form breaks down."
+
+Keep the whole thing under ~450 words.`;
+
+export function buildSystemPrompt(): string {
+  return `${renderProjectSystemPrompt()}\n\n---\n\n# Output format\n\n${OUTPUT_FORMAT_INSTRUCTIONS}`;
+}
+
+export function buildUserPrompt(inputs: WorkoutInputs): string {
+  const focusLine =
+    inputs.focus === "none"
+      ? "No specific focus beyond the workout type."
+      : LABELS.focus[inputs.focus];
+
+  return `Generate one kettlebell workout for me.
+
+Inputs:
+- Workout type: ${LABELS.workoutType[inputs.workoutType]}
+- Duration: ${inputs.duration} minutes
+- Skill level: ${LABELS.skillLevel[inputs.skillLevel]}
+- Equipment: ${LABELS.equipment[inputs.equipment]}
+- Intensity: ${LABELS.intensity[inputs.intensity]}
+- Optional focus: ${focusLine}`;
+}
