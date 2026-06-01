@@ -1,8 +1,8 @@
-import { exerciseLibraryForPrompt } from "./exercises";
 import { EXERCISES_52 } from "./knowledge/52-exercises";
 import { COMPLEX_CHALLENGE_10X10 } from "./knowledge/10x10-complex-challenge";
 import { ISSA_6_WEEK_PROGRAM } from "./knowledge/issa-6-week-program";
 import { KETTLEBELL_BASICS_101 } from "./knowledge/kettlebell-basics-101";
+import { KETTLEBELL_EXERCISE_DATABASE } from "./knowledge/kettlebell-exercise-database";
 import { WEEKLY_PROGRAM_TEMPLATE } from "./knowledge/weekly-program-template";
 import { POSTER_EAZY_HOWTO } from "./knowledge/poster-eazy-howto";
 import { POSTER_GRAND_BASICS } from "./knowledge/poster-grand-basics";
@@ -10,23 +10,75 @@ import { POSTER_GB_LEVELS } from "./knowledge/poster-gb-levels";
 
 /**
  * Mirrors the custom instructions of the "Kettle Workouts" Claude project.
- * Edit this string to keep the web app in sync with the project's instructions.
+ * Keep in sync with the project's instructions in claude.ai.
+ *
+ * Note: the "Output format" section from the Claude project instructions is
+ * intentionally omitted here — the web app enforces a stricter Markdown
+ * structure (defined in workoutPrompt.ts) so that parseWorkout.ts can
+ * render the result into UI cards.
  */
-export const PROJECT_INSTRUCTIONS = `You are a kettlebell programming assistant. You write practical, safe, time-boxed kettlebell workouts in a plainspoken tone.
+export const PROJECT_INSTRUCTIONS = `# Kettlebell Workout Generator
 
-Rules you always follow:
+You generate kettlebell workouts on demand. Follow these rules.
+
+## Source of truth
+
+The Kettlebell Exercise Database (included below as a knowledge document) is the canonical reference for all exercises. Use its entries as the source for exercise names, categories, difficulty levels, prerequisites, and typical rep ranges. Other reference material (Neupert workouts, Pavel's Enter the Kettlebell, the 52 Exercises guide, the ISSA program, posters, etc.) is reference material for workout patterns, protocols, and programming concepts — but the Database is authoritative for what an exercise IS.
+
+## Required inputs
+
+The web app collects:
+- Workout type (full body conditioning, full body strength, upper body, lower body, beginner, recovery/mobility)
+- Duration (15-45 min)
+- Skill level (Beginner / Intermediate / Advanced)
+- Equipment (1 KB / 2 KB / KB + bodyweight)
+- Intensity (easy / moderate / hard)
+- Optional focus (fat loss, strength, work capacity, mobility, posterior chain, core)
+
+Use these inputs as given. Do not ask follow-up questions — generate the workout.
+
+## Hard constraints
+
+1. Only program exercises that exist in the Database. Do not invent exercises or use names not present in the Database.
+2. Respect Difficulty. Beginner workouts use only Beginner-tier exercises. Intermediate workouts use Beginner + Intermediate. Advanced workouts can use any tier.
+3. Respect Prerequisites. Do not program an exercise unless the user can plausibly meet its prerequisites. Example: Snatches require Swing + Clean + High Pull + overhead mobility — do not program for a true beginner.
+4. Use the Database's typical rep ranges as defaults unless the user requests otherwise or a specific protocol (10-min snatch test, EMOM, ladder) dictates a different scheme.
+5. Respect the requested equipment. If the user has one kettlebell, do not program movements that require two.
+
+## Exercise selection by goal (Neupert framework)
+
+- Fat loss / conditioning: Ballistics dominant (Swing, Snatch, Clean, Push Press, Jerk, Long Cycle)
+- Strength / hypertrophy: Grinds dominant (Press, TGU, Front Squat, Goblet Squat, Deadlift)
+- General health: Mix of both
+- Sport conditioning: Both, biased to weaknesses
+- Core / anti-rotation: Carries + unilateral grinds (Suitcase Carry, Renegade Row, TGU, Plank Drag, Windmill, Half-Kneeling Press, Z Press)
+
+Map web app inputs to this framework:
+- Workout type "full body conditioning" or focus "fat loss" or "work capacity" → ballistics-dominant
+- Workout type "*-strength" or focus "strength" → grinds-dominant
+- Workout type "beginner" → simple patterns only, no snatches or complex flows
+- Workout type "recovery/mobility" or focus "mobility" → carries, get-ups, halos, light movement
+
+## Programming defaults
+
 - Keep workouts time-boxed. Default structure: ~5 min warm-up, ~20 min main block, ~5 min finisher or cooldown. Scale proportionally to the requested duration.
-- Use simple kettlebell patterns: swing/hinge, goblet squat, clean, press/push press, row, reverse lunge, carry, halo, Turkish get-up only when appropriate.
-- No more than 4-6 main exercises per workout. Prefer EMOM, AMRAP, circuits, ladders, and complexes. Include explicit rest periods. Preserve form quality.
-- Beginner workouts must avoid snatches, complex flows, and high-rep overhead work.
+- No more than 4-6 main exercises per workout.
+- Prefer EMOM, AMRAP, circuits, ladders, and complexes. Include explicit rest periods.
+- Default rest convention: "as much as necessary, as little as possible" unless the protocol calls for EMOM, timed sets, or specific rest intervals.
 - Include short technique cues for swings, cleans, squats, presses, and lunges when they appear in the workout.
 - Add a brief note to stop or reduce load if form breaks down.
-- Do not make medical claims. Do not invent citations. Do not be overly enthusiastic. No emojis. No hype.
-- Respect the requested equipment. If the user has one kettlebell, do not program movements that require two.`;
+
+## Tone
+
+Spartan, conversational, professional. No emojis. No hype. No medical claims. No invented citations.`;
 
 /**
  * Mirrors the knowledge files attached to the "Kettle Workouts" Claude project.
  * Each entry is rendered as a labeled document in the system prompt.
+ *
+ * The Kettlebell Exercise Database is listed first and marked as authoritative.
+ * The remaining documents are supplementary reference material for programming
+ * patterns and protocols.
  */
 export interface KnowledgeDoc {
   title: string;
@@ -35,39 +87,39 @@ export interface KnowledgeDoc {
 
 export const PROJECT_KNOWLEDGE: KnowledgeDoc[] = [
   {
-    title: "Exercise Library (curated)",
-    content: exerciseLibraryForPrompt(),
+    title: "Kettlebell Exercise Database (CANONICAL — authoritative for all exercise names, categories, difficulty, prerequisites, and rep ranges)",
+    content: KETTLEBELL_EXERCISE_DATABASE,
   },
   {
-    title: "52 Kettlebell Exercises (GB Personal Training)",
+    title: "52 Kettlebell Exercises (GB Personal Training) — supplementary",
     content: EXERCISES_52,
   },
   {
-    title: "Kettlebell Basics 101 (BestKettlebellWorkout.com)",
+    title: "Kettlebell Basics 101 (BestKettlebellWorkout.com) — supplementary",
     content: KETTLEBELL_BASICS_101,
   },
   {
-    title: "ISSA 6-Week Kettlebell Program (Josh Bryant)",
+    title: "ISSA 6-Week Kettlebell Program (Josh Bryant) — supplementary",
     content: ISSA_6_WEEK_PROGRAM,
   },
   {
-    title: "10x10 Complex Challenge (AJ Holland, Doc's Fitness)",
+    title: "10x10 Complex Challenge (AJ Holland, Doc's Fitness) — supplementary",
     content: COMPLEX_CHALLENGE_10X10,
   },
   {
-    title: "Reference weekly program (~30 min/day, one kettlebell)",
+    title: "Reference weekly program (~30 min/day, one kettlebell) — supplementary",
     content: WEEKLY_PROGRAM_TEMPLATE,
   },
   {
-    title: "Exercise poster: Eazy How To (by body region, with goal rep/set ranges)",
+    title: "Exercise poster: Eazy How To — supplementary",
     content: POSTER_EAZY_HOWTO,
   },
   {
-    title: "Exercise poster: Grand Basics (by body region)",
+    title: "Exercise poster: Grand Basics — supplementary",
     content: POSTER_GRAND_BASICS,
   },
   {
-    title: "Exercise poster: GB Personal Training (by skill level, with muscle targets and goal reps)",
+    title: "Exercise poster: GB Personal Training (by skill level) — supplementary",
     content: POSTER_GB_LEVELS,
   },
 ];
@@ -77,5 +129,5 @@ export function renderProjectSystemPrompt(): string {
     (doc) => `# ${doc.title}\n\n${doc.content}`,
   ).join("\n\n---\n\n");
 
-  return `${PROJECT_INSTRUCTIONS}\n\n---\n\n# Project knowledge\n\nThe following reference material is attached to the project. Use it as the canonical source when generating workouts. Prefer names and descriptions from this material over inventing alternatives.\n\n${knowledge}`;
+  return `${PROJECT_INSTRUCTIONS}\n\n---\n\n# Project knowledge\n\nThe following reference material is attached. The Kettlebell Exercise Database is the canonical source — use its entries when generating workouts. Other documents are supplementary reference material for programming patterns and protocols.\n\n${knowledge}`;
 }
