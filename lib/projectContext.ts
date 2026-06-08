@@ -35,7 +35,7 @@ export interface KnowledgeDoc {
 
 export const PROJECT_KNOWLEDGE: KnowledgeDoc[] = [
   {
-    title: "Exercise Library (curated)",
+    title: "Exercise Database (V2.4)",
     content: exerciseLibraryForPrompt(),
   },
   {
