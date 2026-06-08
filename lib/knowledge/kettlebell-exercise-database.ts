@@ -1,7 +1,7 @@
 /**
  * Canonical kettlebell exercise database.
  *
- * Mirrors `Kettlebell_Exercise_Database_V2_3.md` from the Claude project.
+ * Mirrors `Kettlebell_Exercise_Database_V2_4.md` from the Claude project.
  * When updating exercises, update both this file and the markdown file
  * in the Claude project to keep them in sync.
  *
@@ -11,7 +11,7 @@
  */
 export const KETTLEBELL_EXERCISE_DATABASE = `# Kettlebell Exercise Database
 
-**Version:** 2.3
+**Version:** 2.4
 **Purpose:** Canonical reference for kettlebell and accessory exercises used in workout generation.
 
 ---
@@ -206,6 +206,15 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 * **Prerequisites:** One-Hand Swing, hip mobility, healthy knees
 * **Typical reps:** 5-10 per side
 * **How-to:** Standing in a split or staggered stance, swing the bell across the body from one side to the other in a rotational arc — the bell crosses the front leg as you rotate through the hips. The knee on the bell side is the loaded one and is the main injury risk; rotate from the hips, not the knee. Advanced and niche — use sparingly and never with a bell heavier than you can fully control.
+### Forward Flip (Horn-Catch)
+
+* **Aliases:** Flip, Horn-Catch, Forward Flip Swing
+* **Category:** Ballistic
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Two-Hand Swing, One-Hand Swing, strong grip, wrist control
+* **Typical reps:** 3-8 per set as a skill drill; also programmed inside flows (e.g., the Bruce Complex)
+* **How-to:** A kettlebell-juggling move performed at the top of a swing. At the float point (bell about chest height, momentarily weightless), put the thumb in the center of the handle and push the bell forward and up with simultaneous wrist extension and external rotation — like revving a motorcycle — so it makes one full forward rotation in the air. Don't chase it; let gravity drop it back into the swing arc and catch the horns (the vertical sidebars of the handle) to continue swinging. Builds explosive power and grip. Use a controllable bell — a missed catch is the obvious risk.
 
 ---
 
@@ -250,6 +259,16 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 * **Prerequisites:** Clean, Goblet Squat
 * **Typical reps:** 3-8 per side; ladders 1-5
 * **How-to:** Clean the bell to the rack position and squat with the bell sitting on the working-side shoulder, forearm vertical. The asymmetric load forces the core to fight rotation. Complete all reps on one side before switching.
+
+### Single KB Back Squat
+
+* **Aliases:** Trap Squat, 1KB Back Squat
+* **Category:** Grind
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** Goblet Squat, Clean, upper-back strength
+* **Typical reps:** 5-10 per side; alternate the loaded side
+* **How-to:** Hold the bell by the horns, then press it up and rest it on the meat of one upper trap — not the cervical spine. Feet slightly wider than hip-width, toes slightly out. Chest up, core braced hard to stop the asymmetric load twisting the spine, and squat straight down with a vertical shin. The offset weight is the point: anti-rotation under a squat.
 
 ### Military Press
 
@@ -923,6 +942,26 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 * **Typical reps:** 3-8; commonly sets of 3, 4, or 5
 * **How-to:** Both bells in the double rack. Squat to depth, drive up. The rack position taxes the thoracic spine and bracing — this is where serious leg strength gets built.
 
+### Double Back Squat
+
+* **Aliases:** Double Trap Squat, 2KB Back Squat
+* **Category:** Grind
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Double Clean, Double Front Squat, upper-back strength
+* **Typical reps:** 5-8
+* **How-to:** Clean both bells to the rack, then pop the elbows up and seat the bells vertically on the upper traps behind the neck, hands clasped to the bells (or fixed to the head) to stop them slipping. Feet slightly wider than hip-width, toes slightly out. Brace and drop the hips straight down with a vertical shin and upright torso. Demands real upper-back strength to hold the bells seated; a favorite progression in systems like Wolf Brigade.
+
+### Double Overhead Squat
+
+* **Aliases:** Double OHS, 2KB OHS
+* **Category:** Grind
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Double Snatch or Double Jerk to overhead, Overhead Squat, thoracic / ankle / hip mobility, strong overhead lockout
+* **Typical reps:** 3-5
+* **How-to:** Press or clean-and-jerk both bells to a full overhead lockout — arms extended, biceps by the ears, hands facing forward or slightly in, core rigid. Feet shoulder-width or slightly wider, toes slightly out. Push the hips back and squat as deep as mobility allows (ideally hips below knees) while keeping the bells locked out and stacked over the heels — no spinal rounding, no arms drifting forward. Drive up evenly through the whole foot. One of the most mobility-demanding kettlebell movements there is.
+
 ### Double Military Press
 
 * **Aliases:** DMP, Double Press
@@ -1069,6 +1108,16 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 * **Typical reps:** 20-60 seconds
 * **How-to:** Forearm or push-up position. Hold a straight line from head to heels with the abs braced. Full-body isometric.
 
+### Inchworm
+
+* **Aliases:** Walkout, KB Inchworm (loaded variant)
+* **Category:** Bodyweight (KB + BW for the loaded variant)
+* **Equipment:** BW (or 1 KB + BW)
+* **Difficulty:** Beginner-Intermediate
+* **Prerequisites:** Plank, hamstring mobility
+* **Typical reps:** 5-10, or as prescribed inside a complex (e.g., the Humane Burpee)
+* **How-to:** From standing, hinge and place the hands on the floor with legs as straight as mobility allows (a dynamic hamstring stretch). Walk the hands forward one at a time into a plank, brace, then walk them back and stand. The bodyweight version is the one used in the Humane Burpee. **Loaded variant (KB Inchworm):** set a bell upright at the start; in the plank, reach one hand across to drag the bell to the opposite side (a Plank Drag), then walk back — adds an anti-rotation core demand.
+
 ### Walking Lunge (BW)
 
 * **Aliases:** None
@@ -1109,9 +1158,18 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 ---
 
-## NAMED COMBOS (referenced in workouts)
+## COMPLEXES
 
-These are sequences treated as single "movements" within workouts. They draw from the exercises above but are programmed as units.
+A complex is a fixed sequence of movements performed back-to-back with the same bell(s), without setting the weight down between movements (the "no drop" rule). The defining feature is the rep structure, not just the movement list. These are programmed as single units within a workout and draw from the individual movements in the sections above.
+
+Two ways to run a sequence — note which a given complex uses:
+
+* **Complex (block style):** Complete all reps of movement 1, then all reps of movement 2, and so on. One round = the full sequence; the bell stays in hand the whole round.
+* **Chain (cluster style):** One rep of each movement in order, then repeat the whole chain for the prescribed reps.
+
+Difficulty is gated by the hardest movement in the sequence plus the added fatigue, grip, and coordination cost of chaining. A complex is never easier than its toughest component.
+
+Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Chain / Either) | **Equipment** | **Difficulty** | **Prerequisites** (every component) | **Typical reps** | **Note**. Older entries below predate the Run-style field; their Notes describe how they're run.
 
 ### Half Olympic
 
@@ -1214,6 +1272,151 @@ These are sequences treated as single "movements" within workouts. They draw fro
 * **Prerequisites:** Clean, Lateral Squat, hip mobility
 * **Typical reps:** 3-5 per side
 * **Note:** Bell on the floor outside one foot. Wide stance — shift weight onto the bell-side leg, drop into a deep lateral squat to grip the bell, then drive up and laterally while cleaning the bell to the rack. Combines lateral hip strength with the clean pattern. Distinct enough from a standard clean to program separately when you want frontal-plane work.
+
+---
+
+### Armor Building Complex (ABC)
+
+* **Aliases:** ABC
+* **Sequence:** Double Clean → Military Press → Front Squat
+* **Run style:** Chain — one round = 2 cleans, 1 press, 3 squats
+* **Equipment:** 2 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** Double Clean, Double Military Press, Double Front Squat
+* **Typical reps:** 2 cleans + 1 press + 3 squats per round. EMOM (one round on the minute) for 15-30 min, or accumulate quality rounds in 15-20 min. Climb 5→10→15 rounds; work up to 10→15→20.
+* **Note:** Dan John's complex. The single strict press is the governor — self-limiting by design: when the press dies, drop it and keep alternating cleans and squats. Standard load 2×24 kg men / 2×16 kg women; 32-36 kg advanced. Single-bell version: clean+press left, swing-switch to clean+press right, then two offset front squats. Often paired with the Humane Burpee on a weekly rotation (Wk1: ABC, HB1, ABC / Wk2: HB1, ABC, HB2).
+
+### Humane Burpee
+
+* **Aliases:** HB, HB1 / HB2
+* **Sequence:** Swing → Goblet Squat → Inchworm out → Push-up → Inchworm back (descending ladder)
+* **Run style:** Complex (block) with a descending rep ladder
+* **Equipment:** 1 KB + BW
+* **Difficulty:** Intermediate
+* **Prerequisites:** Two-Hand Swing, Goblet Squat, Push-up
+* **Typical reps:** HB1 — 15 swings, 5 goblet squats, inchworm out, 5 push-ups, inchworm back; repeat dropping squats/push-ups 5→4→3→2→1 (swings stay 15). HB2 — same shape starting at 10 goblet squats / 10 push-ups, descending 10→1.
+* **Note:** Dan John conditioning piece, pairs with the ABC. Set the bell down under control between the goblet squat and the inchworm. *Inchworm* is now its own DB entry (bodyweight, plus a loaded KB variant).
+
+### The Deep Six (RKC)
+
+* **Aliases:** RKC Deep Six, Big Six complex
+* **Sequence:** Snatch → One-Hand Swing → Clean → Military Press → Front Squat
+* **Run style:** Complex (block) — all 5 reps of each on one side, then switch
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Snatch (plus its chain: Swing, Clean, High Pull, overhead mobility), Military Press, Single KB Front Squat
+* **Typical reps:** 5 reps each movement, full sequence one side without dropping the bell, then switch.
+* **Note:** Built on the RKC "Big Six" under hardstyle rules — no drop, no rest between movements, ballistic power plus grind tension throughout. The snatch lead-off gates it to Advanced.
+
+### The Kettlebell Psycho Press
+
+* **Aliases:** Psycho Press
+* **Sequence:** Double Clean → Deep Front Squat → Thruster (strict press driven out of the squat)
+* **Run style:** Chain — each rep is clean, squat, press from the bottom
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Double Clean, Double Front Squat, Double Military Press / Thruster, overhead mobility
+* **Typical reps:** Low reps, heavy. Programmed in circuits chasing mechanical failure, not volume.
+* **Note:** Joe Daniels / KBOMG. A deliberately ultra-strict thruster — minimal leg drive into the press, bells driven up in a slight corkscrew to lockout. The point is structural integrity under load: elbows tucked, no lateral power leak. Systemically brutal.
+
+### The Bruce Complex
+
+* **Aliases:** None
+* **Sequence:** Two-Hand Swing → Forward Flip (catch the horns) → Goblet Squat → reset
+* **Run style:** Chain — one rep = the full flow, climbed as a ladder
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced (Intermediate-Advanced with the High Pull substitution)
+* **Prerequisites:** Two-Hand Swing, Goblet Squat, strong grip/tension control; flip catch demands timing
+* **Typical reps:** Ladder 1→10 reps. Often run as inverse ladders against another lift (e.g., dead-stop snatches) — Bruce reps climb as the other's fall. Heavy bell (elite: 48 kg+).
+* **Note:** Joe Daniels / KBOMG. At the top of the swing, release and flip the bell to catch the horns into the rack, then goblet squat. The *forward flip / horn-catch* is now its own DB entry; **High Pull** remains the accessible substitution at the top. Super Bruce variant isolates each arm: 1-arm swing → 1-arm flip → snatch → overhead squat.
+
+### The Kettlebell Cyclops Complex
+
+* **Aliases:** Cyclops
+* **Sequence:** Clean → Back Squat → Clean (regrip) → Front Squat → Overhead Squat
+* **Run style:** Chain — 1 rep of each, set the bell down, repeat
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Clean, Single KB Front Squat, Overhead Squat, single-arm overhead stability and mobility
+* **Typical reps:** 1 rep each through the sequence; 3-5 rounds, 90-120 s rest, alternating the starting arm each round. Heavy bell.
+* **Note:** Joe Daniels / KBOMG. Squat-focused hypertrophy. Single KB Back Squat is now a DB entry (bell on the trap, not the cervical spine).
+
+### The Firebreather Complex
+
+* **Aliases:** None
+* **Sequence:** Dead-Stop Swing → Two-Hand Swing → Two-Hand Clean → One-Hand Swing → One-Arm Deadlift → High Pull → Pendulum High Pull
+* **Run style:** Complex (block) — descending-rep single set, 50 reps unbroken
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate-Advanced
+* **Prerequisites:** Two-Hand Swing, One-Hand Swing, Clean, Suitcase Deadlift, High Pull; pain-free heavy hinge
+* **Typical reps:** One unbroken set — 7 dead-stop swings, 7 two-hand swings, 6 two-hand cleans (3L/3R), 5 one-hand swings (R then L), 4 one-arm deadlifts (R/L), 3 high pulls, 3 pendulum high pulls.
+* **Note:** Continuous heavy hinge-to-pull conditioning. Dead-stop swing = park the bell on the floor between reps (Two-Hand Swing variant); one-arm deadlift = Suitcase Deadlift; pendulum high pull = High Pull taken straight from the swing arc. Pick a weight you can control one-handed.
+
+### The Kettlebell Bodysnatcher Complex
+
+* **Aliases:** Bodysnatcher
+* **Sequence:** Dead-Stop Swing → Dead Clean → Goblet Squat → Thruster → descent
+* **Run style:** Chain — one rep = the full flow, unbroken
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Two-Hand Swing, Clean, Goblet Squat, Thruster, overhead mobility
+* **Typical reps:** Unilateral — 3-5 continuous reps one arm, switch, 3-5 the other. 3-5 sets, 60-90 s rest after both sides. Load light enough for a clean overhead lockout.
+* **Note:** Hinge + squat + push + pull in one flow. Dead clean = clean from a dead stop on the floor. Spikes HR fast; form on the overhead thruster is the limiter.
+
+### The Cowboy Complex
+
+* **Aliases:** None
+* **Sequence:** Dead-Stop Swing → Dead-Stop Clean → Push Press → Front Squat
+* **Run style:** Complex (block) — all reps of one, then the next, no drop
+* **Equipment:** 2 KB (single-bell scalable)
+* **Difficulty:** Advanced
+* **Prerequisites:** (Double) Swing, Clean, Push Press, Front Squat
+* **Typical reps:** Fixed reps per movement (e.g., 5 each), 3-5 rounds, cumulative volume.
+* **Note:** Heavy posterior-chain + overhead block complex. Dead-stop = park between reps. Strong grip and lung demand.
+
+### The Cowgirl Complex
+
+* **Aliases:** None
+* **Sequence:** Dead-Stop Swing → Dead-Stop Clean → Strict Press → Clean & Push Press → Clean & Jerk
+* **Run style:** Complex (block) — escalating power output through the sequence
+* **Equipment:** 2 KB (scalable)
+* **Difficulty:** Advanced
+* **Prerequisites:** Swing, Clean, Military Press, Push Press, Jerk (Long Cycle)
+* **Typical reps:** Block reps per movement, 3-5 rounds.
+* **Note:** Hip-dominant; builds from strict strength to ballistic overhead. The jerk finish gates it Advanced. Sister to the Cowboy — swaps front squats for an overhead-press progression.
+
+### The Kickstarter Complex
+
+* **Aliases:** None
+* **Sequence:** Double Overhead Squat → Double Rack (Front) Squat → Double Back Squat → Suitcase Deadlift
+* **Run style:** Complex (block) — all reps of one before the next; bells ideally never touch the floor until done
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Double Front Squat, Overhead Squat, Suitcase Deadlift, overhead mobility
+* **Typical reps:** 5 OH squats, 2-5 rack squats, 5 back squats, 5 suitcase deadlifts. Scale 2-5 reps per movement. Heavy.
+* **Note:** KBMUSCLE leg-endurance complex. Double Rack Squat = Double Front Squat. *Double Overhead Squat* and *Double Back Squat* are now DB entries.
+
+### The Kettlebell Shoulder Fire Complex
+
+* **Aliases:** Shoulder Fire
+* **Sequence:** Military Press → Push Press → Jerk
+* **Run style:** Complex (block) — 12 reps per round
+* **Equipment:** 1 KB or 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Military Press, Push Press, Jerk
+* **Typical reps:** 3 strict presses → 4 push presses → 5 jerks per round, no drop. Heavy enough that 3 strict presses is already hard.
+* **Note:** Overhead-strength ladder that adds leg assistance as the shoulder fatigues — strict, then dip-and-drive, then double-dip jerk. Keep full-body tension; no sloppy momentum.
+
+### The Glute-cifer
+
+* **Aliases:** None
+* **Sequence:** Double Outside-the-Leg Swing → Double Clean → Double Front Squat → cast back to Swing
+* **Run style:** Either — continuous, no drop
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Double Swing, Double Clean, Double Front Squat
+* **Typical reps:** Block or chain reps, cycling back to swings to finish before rest.
+* **Note:** Posterior-chain hypertrophy + conditioning. Outside-the-leg swing = wide-stance Double Swing with the bells passing outside the knees. Constant tension on glutes and core because the bells never go down.
 
 ---
 
