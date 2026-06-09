@@ -1,17 +1,17 @@
 /**
  * Canonical kettlebell exercise database.
  *
- * Mirrors `Kettlebell_Exercise_Database_V2_4.md` from the Claude project.
+ * Mirrors `Kettlebell_Exercise_Database_V2_5.md` from the Claude project.
  * When updating exercises, update both this file and the markdown file
  * in the Claude project to keep them in sync.
  *
  * This is the authoritative reference for exercise names, categories,
- * difficulty tiers, prerequisites, and typical rep ranges used by the
- * workout generator.
+ * movement patterns, difficulty tiers, prerequisites, and typical rep
+ * ranges used by the workout generator.
  */
 export const KETTLEBELL_EXERCISE_DATABASE = `# Kettlebell Exercise Database
 
-**Version:** 2.4
+**Version:** 2.5
 **Purpose:** Canonical reference for kettlebell and accessory exercises used in workout generation.
 
 ---
@@ -22,6 +22,7 @@ When generating a workout, draw exercises from this list. Each entry includes:
 
 * **Aliases** — other common names for the same movement
 * **Category** — Ballistic (explosive, hip-driven) | Grind (slow, strength) | Carry | Hybrid (combo movement) | Bodyweight
+* **Pattern** — Primary movement pattern(s) for structural balance: Squat | Hinge | Push | Pull | Loaded Carry | Anti-rotation/Rotation. Accessory, mobility, isolation, and pure-core drills are tagged as such and do not count toward pattern balance.
 * **Equipment** — 1 KB | 2 KB | KB + BW | BW
 * **Difficulty** — Beginner | Intermediate | Advanced (based on skill demand, not load)
 * **Prerequisites** — Movements or capacities required before attempting this exercise
@@ -45,6 +46,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** 2H Swing, Russian Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Hip hinge / deadlift pattern
@@ -55,6 +57,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** 1H Swing, Single-Arm Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Two-Hand Swing
@@ -65,6 +68,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Alternating Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** One-Hand Swing
@@ -75,6 +79,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** 1H Clean, Single Clean
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** One-Hand Swing
@@ -85,6 +90,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Hinge, Pull
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** One-Hand Swing
@@ -95,6 +101,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** 1H Snatch
 * **Category:** Ballistic
+* **Pattern:** Hinge (overhead finish)
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** One-Hand Swing, Clean, High Pull, overhead shoulder mobility
@@ -105,6 +112,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Military Press
@@ -115,6 +123,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Split Jerk, Push Jerk
 * **Category:** Ballistic
+* **Pattern:** Push
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Push Press, overhead shoulder mobility
@@ -125,6 +134,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** C\\&P
 * **Category:** Hybrid (Ballistic + Grind)
+* **Pattern:** Hinge, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Military Press
@@ -135,6 +145,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Long Cycle, LC
 * **Category:** Hybrid (Ballistic)
+* **Pattern:** Hinge, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Jerk
@@ -147,6 +158,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Overhead Swing, CrossFit Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Two-Hand Swing, overhead shoulder mobility
@@ -159,6 +171,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Two-Hand High Pull
 * **Category:** Ballistic
+* **Pattern:** Hinge, Pull
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** KB Deadlift, hip hinge
@@ -173,6 +186,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** BUP Clean
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, grip strength, wrist stability
@@ -187,6 +201,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Single-Leg Clean, Pistol Clean
 * **Category:** Ballistic
+* **Pattern:** Hinge (single-leg)
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Single Leg Deadlift, single-leg balance
@@ -201,6 +216,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Rotational Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge, Rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** One-Hand Swing, hip mobility, healthy knees
@@ -210,6 +226,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Flip, Horn-Catch, Forward Flip Swing
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Two-Hand Swing, One-Hand Swing, strong grip, wrist control
@@ -224,6 +241,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** TGU, Get-Up
 * **Category:** Grind
+* **Pattern:** Multiple — Push, Squat, Anti-rotation (full-body)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Shoulder mobility, basic core engagement. Neupert/StrongFirst recommend 50 reps with a shoe before adding weight.
@@ -234,6 +252,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Push, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Shoulder mobility
@@ -244,6 +263,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Squat
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None (foundational squat pattern)
@@ -254,6 +274,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Rack Squat, 1KB FSQ
 * **Category:** Grind
+* **Pattern:** Squat, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Goblet Squat
@@ -264,6 +285,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Trap Squat, 1KB Back Squat
 * **Category:** Grind
+* **Pattern:** Squat, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Goblet Squat, Clean, upper-back strength
@@ -274,6 +296,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Press, Strict Press, MP
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, overhead shoulder mobility
@@ -284,6 +307,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** BUP
 * **Category:** Grind
+* **Pattern:** Push, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Military Press, strong grip, wrist stability
@@ -294,6 +318,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Floor Press
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** None
@@ -304,6 +329,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Rotation, Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Overhead shoulder mobility, hip mobility, Turkish Get-Up
@@ -314,6 +340,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** OHS
 * **Category:** Grind
+* **Pattern:** Squat, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Snatch, full squat mobility, strong overhead lockout
@@ -324,6 +351,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Sumo Deadlift (with KB between feet)
 * **Category:** Grind
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Hip hinge
@@ -334,6 +362,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** SLDL
 * **Category:** Grind
+* **Pattern:** Hinge, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** KB Deadlift, single-leg balance
@@ -344,6 +373,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Single Arm Deadlift
 * **Category:** Grind
+* **Pattern:** Hinge, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** KB Deadlift
@@ -354,6 +384,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Single Leg Squat
 * **Category:** Grind
+* **Pattern:** Squat (single-leg)
 * **Equipment:** 1 KB (counterweight) or BW
 * **Difficulty:** Advanced
 * **Prerequisites:** Bodyweight squat strength, ankle and hip mobility, single-leg balance
@@ -364,6 +395,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Mobility
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -374,6 +406,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Armbar
 * **Category:** Grind
+* **Pattern:** Mobility (shoulder)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Shoulder mobility, Turkish Get-Up
@@ -384,6 +417,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Mobility
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -394,6 +428,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Lateral Goblet Squat Series
 * **Category:** Grind
+* **Pattern:** Squat (frontal plane)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Goblet Squat
@@ -404,6 +439,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Hip hinge
@@ -414,6 +450,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Rack Lunge
 * **Category:** Grind
+* **Pattern:** Squat (single-leg), Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, bodyweight lunge
@@ -424,6 +461,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Squat (single-leg)
 * **Equipment:** 1 KB (goblet, rack, or suitcase)
 * **Difficulty:** Beginner
 * **Prerequisites:** Bodyweight lunge
@@ -434,6 +472,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Squat (single-leg), Rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Walking Lunge
@@ -444,6 +483,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Side Lunge, Cossack Squat (close variant)
 * **Category:** Grind
+* **Pattern:** Squat (frontal plane)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Goblet Squat, hip mobility
@@ -454,6 +494,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Squat (single-leg)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -464,6 +505,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Hip Thrust (variant)
 * **Category:** Grind
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -474,6 +516,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Bent-Over Row, One-Arm Row
 * **Category:** Grind
+* **Pattern:** Pull
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Hip hinge
@@ -484,6 +527,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Pull, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Hip hinge
@@ -494,6 +538,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Pull
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Hip hinge, Single-Arm Row
@@ -504,6 +549,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Pull, Anti-rotation
 * **Equipment:** 2 KB + BW
 * **Difficulty:** Advanced
 * **Prerequisites:** Plank, Push-up, Single-Arm Row
@@ -514,6 +560,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Isolation (arms)
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -524,6 +571,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Standing Triceps Extension
 * **Category:** Grind
+* **Pattern:** Isolation (triceps)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Overhead shoulder mobility
@@ -534,6 +582,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Isolation (lats/chest)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Shoulder mobility
@@ -544,6 +593,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Around the Body Pass
 * **Category:** Grind
+* **Pattern:** Mobility
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -554,6 +604,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Standing Oblique Crunch
 * **Category:** Grind
+* **Pattern:** Core (anti-lateral-flexion)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -564,6 +615,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Rotation (core)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** None
@@ -574,6 +626,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Half-Kneeling Chop, KB Chop
 * **Category:** Grind
+* **Pattern:** Rotation (core)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** None
@@ -584,6 +637,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Sit-up, Weighted Sit-up
 * **Category:** Grind
+* **Pattern:** Core (flexion)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -594,6 +648,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Straight Arm Sit
 * **Category:** Grind
+* **Pattern:** Core (flexion/anti-extension)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Sit-up, overhead shoulder stability
@@ -604,6 +659,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** V Up
 * **Category:** Grind
+* **Pattern:** Core (flexion)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Sit-up, hip flexor flexibility
@@ -614,6 +670,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Side Plank
 * **Category:** Grind
+* **Pattern:** Core (anti-lateral-flexion)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Plank
@@ -624,6 +681,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Plank Pull-Through
 * **Category:** Grind
+* **Pattern:** Anti-rotation (core)
 * **Equipment:** 1 KB + BW
 * **Difficulty:** Intermediate
 * **Prerequisites:** Plank, Push-up
@@ -634,6 +692,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Hybrid
+* **Pattern:** Push, Core
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Military Press, sit-up
@@ -644,6 +703,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Squat to Press
 * **Category:** Hybrid
+* **Pattern:** Squat, Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Front Squat, Push Press
@@ -654,6 +714,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Hybrid
+* **Pattern:** Multiple — Pull, Push, Squat (full-body)
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Renegade Row, Double Clean, Thruster
@@ -664,6 +725,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Rolling Squat
 * **Category:** Grind
+* **Pattern:** Squat (mobility)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Goblet Squat, hip and thoracic mobility
@@ -674,6 +736,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Good Morning
 * **Category:** Grind
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Hip hinge
@@ -688,6 +751,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Half Kneeling Military Press
 * **Category:** Grind
+* **Pattern:** Push, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Military Press
@@ -702,6 +766,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Z Press, Seated Press
 * **Category:** Grind
+* **Pattern:** Push, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Military Press, hamstring and hip mobility
@@ -716,6 +781,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Split Stance Row, Dead-Stop Row
 * **Category:** Grind
+* **Pattern:** Pull
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Hip hinge, Single-Arm Row
@@ -730,6 +796,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Isolation (chest)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Floor Press, shoulder control
@@ -744,6 +811,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Core (anti-extension)
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** None
@@ -758,6 +826,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Reverse TGU, Top-Down Get-Up
 * **Category:** Grind
+* **Pattern:** Multiple — Push, Squat, Anti-rotation (full-body)
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Turkish Get-Up
@@ -772,6 +841,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Double Kneeling Press
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Military Press
@@ -786,6 +856,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Around-the-Leg Lunge
 * **Category:** Grind
+* **Pattern:** Squat (single-leg), Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Reverse Lunge, Suitcase Deadlift
@@ -800,6 +871,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** OH Reverse Lunge
 * **Category:** Grind
+* **Pattern:** Squat (single-leg), Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Reverse Lunge (Racked), Military Press, overhead shoulder mobility
@@ -814,6 +886,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** OH Walking Lunge
 * **Category:** Grind
+* **Pattern:** Squat (single-leg), Push
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Overhead Reverse Lunge, Walking Lunge
@@ -828,6 +901,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Carry
+* **Pattern:** Loaded Carry, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** Suitcase Deadlift
@@ -838,6 +912,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Carry
+* **Pattern:** Loaded Carry
 * **Equipment:** 1 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Clean
@@ -848,6 +923,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Carry
+* **Pattern:** Loaded Carry, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Military Press, overhead shoulder mobility
@@ -858,6 +934,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** BUP Carry
 * **Category:** Carry
+* **Pattern:** Loaded Carry, Anti-rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Bottom's-Up Press, strong grip
@@ -872,6 +949,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** One-Hand Swing
@@ -882,6 +960,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** DCL
 * **Category:** Ballistic
+* **Pattern:** Hinge
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Single Clean
@@ -892,6 +971,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Hinge, Pull
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Single High Pull, Double Swing
@@ -902,6 +982,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Hinge (overhead finish)
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Single Snatch, Double Clean
@@ -912,6 +993,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Push
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Double Clean, Single Push Press
@@ -922,6 +1004,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Ballistic
+* **Pattern:** Push
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Push Press, Single Jerk
@@ -936,6 +1019,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** DFSQ, Double FSQ
 * **Category:** Grind
+* **Pattern:** Squat
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Double Clean, Single Front Squat
@@ -946,6 +1030,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Double Trap Squat, 2KB Back Squat
 * **Category:** Grind
+* **Pattern:** Squat
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Clean, Double Front Squat, upper-back strength
@@ -956,6 +1041,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Double OHS, 2KB OHS
 * **Category:** Grind
+* **Pattern:** Squat, Push
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Snatch or Double Jerk to overhead, Overhead Squat, thoracic / ankle / hip mobility, strong overhead lockout
@@ -966,6 +1052,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** DMP, Double Press
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Double Clean, Single Military Press
@@ -976,6 +1063,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 2 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Floor Press
@@ -990,6 +1078,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Alternating Press, Seesaw Press
 * **Category:** Grind
+* **Pattern:** Push, Anti-rotation
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Military Press, Double Clean
@@ -1004,6 +1093,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Alternating Floor Press
 * **Category:** Grind
+* **Pattern:** Push
 * **Equipment:** 2 KB
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Floor Press
@@ -1018,6 +1108,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Farmer's Walk
 * **Category:** Carry
+* **Pattern:** Loaded Carry
 * **Equipment:** 2 KB
 * **Difficulty:** Beginner
 * **Prerequisites:** KB Deadlift
@@ -1028,6 +1119,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Carry
+* **Pattern:** Loaded Carry
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Double Clean
@@ -1042,6 +1134,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None
 * **Category:** Bodyweight
+* **Pattern:** Push
 * **Equipment:** BW
 * **Difficulty:** Beginner
 * **Prerequisites:** Plank
@@ -1052,6 +1145,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None
 * **Category:** Bodyweight
+* **Pattern:** Pull
 * **Equipment:** BW (bar)
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Hanging strength, scapular control
@@ -1062,6 +1156,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None
 * **Category:** Bodyweight
+* **Pattern:** Pull
 * **Equipment:** BW (bar)
 * **Difficulty:** Intermediate
 * **Prerequisites:** Hanging strength
@@ -1072,6 +1167,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Dip
 * **Category:** Bodyweight
+* **Pattern:** Push
 * **Equipment:** BW (parallel bars)
 * **Difficulty:** Intermediate
 * **Prerequisites:** Push-up, shoulder mobility
@@ -1082,6 +1178,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Bear Crawl, Quadrupedal Movement
 * **Category:** Bodyweight
+* **Pattern:** Anti-rotation (locomotion)
 * **Equipment:** BW
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -1092,6 +1189,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None
 * **Category:** Bodyweight
+* **Pattern:** Multiple — Squat, Push (conditioning)
 * **Equipment:** BW
 * **Difficulty:** Intermediate
 * **Prerequisites:** Push-up, jump
@@ -1102,6 +1200,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Front Plank
 * **Category:** Bodyweight
+* **Pattern:** Core (anti-extension)
 * **Equipment:** BW
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -1112,6 +1211,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** Walkout, KB Inchworm (loaded variant)
 * **Category:** Bodyweight (KB + BW for the loaded variant)
+* **Pattern:** Core (anti-extension), Mobility
 * **Equipment:** BW (or 1 KB + BW)
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Plank, hamstring mobility
@@ -1122,6 +1222,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None
 * **Category:** Bodyweight
+* **Pattern:** Squat (single-leg)
 * **Equipment:** BW
 * **Difficulty:** Beginner
 * **Prerequisites:** None
@@ -1136,6 +1237,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** KB Push-up
 * **Category:** Bodyweight (KB + BW)
+* **Pattern:** Push
 * **Equipment:** 1 KB + BW
 * **Difficulty:** Beginner-Intermediate
 * **Prerequisites:** Push-up
@@ -1150,6 +1252,7 @@ Categories follow Geoff Neupert's framework: ballistics for fat loss and conditi
 
 * **Aliases:** None common
 * **Category:** Bodyweight
+* **Pattern:** Multiple — Squat, Push (conditioning)
 * **Equipment:** 1 KB + BW
 * **Difficulty:** Intermediate
 * **Prerequisites:** Burpee
@@ -1174,6 +1277,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### Half Olympic
 
 * **Sequence:** Clean → Front Squat → Press
+* **Pattern:** Hinge, Squat, Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Front Squat, Military Press
@@ -1183,6 +1287,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### True Olympic
 
 * **Sequence:** Clean → Front Squat → Jerk
+* **Pattern:** Hinge, Squat, Push
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Clean, Double Front Squat, Double Jerk
@@ -1192,6 +1297,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### Long Cycle
 
 * **Sequence:** Clean → Jerk (with drop between reps)
+* **Pattern:** Hinge, Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Jerk
@@ -1201,6 +1307,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### Real Muscle-Building Fat-Burner
 
 * **Sequence:** Clean → Jerk (or Clean → Push Press for the "Light" version)
+* **Pattern:** Hinge, Push
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Double Clean, Double Jerk (or Push Press)
@@ -1210,6 +1317,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### King-Sized Combo
 
 * **Sequence:** Snatch → Press → Front Squat (or variants reordering these three)
+* **Pattern:** Hinge, Push, Squat
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Snatch, Military Press, Front Squat
@@ -1219,6 +1327,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### Going Ballistic
 
 * **Sequence:** Swing → Clean → Snatch (and variants adding High Pull or Push Press)
+* **Pattern:** Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Swing, Clean, Snatch (and High Pull / Push Press if used)
@@ -1228,6 +1337,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 ### The Giant
 
 * **Sequence:** Clean → Press (1 KB)
+* **Pattern:** Hinge, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Military Press
@@ -1241,6 +1351,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 
 
 * **Sequence:** Half-Kneeling Clean → Press → Windmill (from kneeling)
+* **Pattern:** Hinge, Push, Rotation
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Military Press, Windmill, hip and shoulder mobility
@@ -1254,6 +1365,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 
 
 * **Sequence:** Clean → Push Press
+* **Pattern:** Hinge, Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Clean, Push Press
@@ -1267,6 +1379,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 
 
 * **Sequence:** Side Lunge → Clean (from low position)
+* **Pattern:** Squat, Hinge
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Lateral Squat, hip mobility
@@ -1280,6 +1393,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** ABC
 * **Sequence:** Double Clean → Military Press → Front Squat
 * **Run style:** Chain — one round = 2 cleans, 1 press, 3 squats
+* **Pattern:** Hinge, Push, Squat
 * **Equipment:** 2 KB
 * **Difficulty:** Intermediate
 * **Prerequisites:** Double Clean, Double Military Press, Double Front Squat
@@ -1291,6 +1405,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** HB, HB1 / HB2
 * **Sequence:** Swing → Goblet Squat → Inchworm out → Push-up → Inchworm back (descending ladder)
 * **Run style:** Complex (block) with a descending rep ladder
+* **Pattern:** Hinge, Squat, Push
 * **Equipment:** 1 KB + BW
 * **Difficulty:** Intermediate
 * **Prerequisites:** Two-Hand Swing, Goblet Squat, Push-up
@@ -1302,6 +1417,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** RKC Deep Six, Big Six complex
 * **Sequence:** Snatch → One-Hand Swing → Clean → Military Press → Front Squat
 * **Run style:** Complex (block) — all 5 reps of each on one side, then switch
+* **Pattern:** Hinge, Push, Squat
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Snatch (plus its chain: Swing, Clean, High Pull, overhead mobility), Military Press, Single KB Front Squat
@@ -1313,6 +1429,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** Psycho Press
 * **Sequence:** Double Clean → Deep Front Squat → Thruster (strict press driven out of the squat)
 * **Run style:** Chain — each rep is clean, squat, press from the bottom
+* **Pattern:** Hinge, Squat, Push
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Clean, Double Front Squat, Double Military Press / Thruster, overhead mobility
@@ -1324,6 +1441,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Two-Hand Swing → Forward Flip (catch the horns) → Goblet Squat → reset
 * **Run style:** Chain — one rep = the full flow, climbed as a ladder
+* **Pattern:** Hinge, Squat
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced (Intermediate-Advanced with the High Pull substitution)
 * **Prerequisites:** Two-Hand Swing, Goblet Squat, strong grip/tension control; flip catch demands timing
@@ -1335,6 +1453,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** Cyclops
 * **Sequence:** Clean → Back Squat → Clean (regrip) → Front Squat → Overhead Squat
 * **Run style:** Chain — 1 rep of each, set the bell down, repeat
+* **Pattern:** Hinge, Squat
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Clean, Single KB Front Squat, Overhead Squat, single-arm overhead stability and mobility
@@ -1346,6 +1465,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Dead-Stop Swing → Two-Hand Swing → Two-Hand Clean → One-Hand Swing → One-Arm Deadlift → High Pull → Pendulum High Pull
 * **Run style:** Complex (block) — descending-rep single set, 50 reps unbroken
+* **Pattern:** Hinge, Pull
 * **Equipment:** 1 KB
 * **Difficulty:** Intermediate-Advanced
 * **Prerequisites:** Two-Hand Swing, One-Hand Swing, Clean, Suitcase Deadlift, High Pull; pain-free heavy hinge
@@ -1357,6 +1477,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** Bodysnatcher
 * **Sequence:** Dead-Stop Swing → Dead Clean → Goblet Squat → Thruster → descent
 * **Run style:** Chain — one rep = the full flow, unbroken
+* **Pattern:** Hinge, Squat, Push
 * **Equipment:** 1 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Two-Hand Swing, Clean, Goblet Squat, Thruster, overhead mobility
@@ -1368,6 +1489,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Dead-Stop Swing → Dead-Stop Clean → Push Press → Front Squat
 * **Run style:** Complex (block) — all reps of one, then the next, no drop
+* **Pattern:** Hinge, Push, Squat
 * **Equipment:** 2 KB (single-bell scalable)
 * **Difficulty:** Advanced
 * **Prerequisites:** (Double) Swing, Clean, Push Press, Front Squat
@@ -1379,6 +1501,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Dead-Stop Swing → Dead-Stop Clean → Strict Press → Clean & Push Press → Clean & Jerk
 * **Run style:** Complex (block) — escalating power output through the sequence
+* **Pattern:** Hinge, Push
 * **Equipment:** 2 KB (scalable)
 * **Difficulty:** Advanced
 * **Prerequisites:** Swing, Clean, Military Press, Push Press, Jerk (Long Cycle)
@@ -1390,6 +1513,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Double Overhead Squat → Double Rack (Front) Squat → Double Back Squat → Suitcase Deadlift
 * **Run style:** Complex (block) — all reps of one before the next; bells ideally never touch the floor until done
+* **Pattern:** Squat, Hinge
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Front Squat, Overhead Squat, Suitcase Deadlift, overhead mobility
@@ -1401,6 +1525,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** Shoulder Fire
 * **Sequence:** Military Press → Push Press → Jerk
 * **Run style:** Complex (block) — 12 reps per round
+* **Pattern:** Push
 * **Equipment:** 1 KB or 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Military Press, Push Press, Jerk
@@ -1412,6 +1537,7 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Aliases:** None
 * **Sequence:** Double Outside-the-Leg Swing → Double Clean → Double Front Squat → cast back to Swing
 * **Run style:** Either — continuous, no drop
+* **Pattern:** Hinge, Squat
 * **Equipment:** 2 KB
 * **Difficulty:** Advanced
 * **Prerequisites:** Double Swing, Double Clean, Double Front Squat

@@ -59,6 +59,33 @@ Map web app inputs to this framework:
 - Workout type "beginner" → simple patterns only, no snatches or complex flows
 - Workout type "recovery/mobility" or focus "mobility" → carries, get-ups, halos, light movement
 
+## Structure: movement-pattern balance
+
+Every Database entry has a Pattern field (Squat, Hinge, Push, Pull, Loaded Carry, Anti-rotation/Rotation; some span several). An exercise contributes its first-listed pattern. Entries tagged Mobility, Isolation, or Core do NOT fill a pattern slot — use them as accessories, not as the spine of a workout. A complex or chain counts as ONE main-block exercise and fills every pattern it lists at once.
+
+Balance the main block by pattern, not muscle:
+- Full body (conditioning or strength): cover at least four of the six patterns; always include both a Hinge and a Squat. If you program a Push, program a Pull (and vice versa) — keep the push/pull count within one.
+- Upper-body strength: Push- and Pull-dominant, balanced within one exercise; add a Carry or Anti-rotation if room.
+- Lower-body strength: include both a Hinge and a Squat; add a Carry or Anti-rotation if room.
+- Beginner: one pattern per exercise, simple patterns only (Hinge, Squat, Push, Pull, Carry); no multi-pattern complexes/chains, no Rotation work.
+- Recovery/mobility: balance relaxed; favor Carries, get-ups, and Mobility-tagged drills.
+
+Do not stack the same primary pattern more than twice unless the goal calls for it (e.g. a squat-focused session).
+
+## Sequencing the main block
+
+On top of the ballistics/grinds emphasis above, choose how the main block is sequenced and state the format explicitly:
+- Complex (all reps of one movement before the next, no drop): max time under tension, localized fatigue. Use for strength/hypertrophy — heavier, lower reps, leave reps in reserve (do not train to failure), full recovery between rounds.
+- Chain (one rep of each movement, repeat the sequence): lower localized fatigue, preserves power and coordination. Default for mixed/full-body and skill-biased work.
+- Metabolic circuit (timed work:rest across stations): builds work capacity. Set the ratio by intent — 1:2 (e.g. 30s/60s) for power, 1:1 (40s/40s) for conditioning, 2:1 (40s/20s) for metabolic/fat-loss.
+
+Map inputs to a paradigm:
+- focus "fat loss" or "work capacity", or workout type "full body conditioning" → metabolic circuit (1:1 or 2:1) or a chain.
+- focus "strength" or "posterior chain", or workout type "*-strength" → complex.
+- full body with no strong focus → chain.
+- intensity "easy" → longer-rest end (1:2, or complex with full recovery); intensity "hard" → shorter rest (2:1), never at the cost of form.
+- workout type "beginner" → straight sets or simple EMOM, one movement at a time (defer to the Beginner rule above).
+
 ## Programming defaults
 
 - Keep workouts time-boxed. Default structure: ~5 min warm-up, ~20 min main block, ~5 min finisher or cooldown. Scale proportionally to the requested duration.

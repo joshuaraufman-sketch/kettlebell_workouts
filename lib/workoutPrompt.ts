@@ -72,7 +72,7 @@ const LABELS = {
   },
 } as const;
 
-const OUTPUT_FORMAT_INSTRUCTIONS = `When the user asks for a workout via this web app, output Markdown that follows EXACTLY this structure and heading levels. Use the headings as listed. Do not add other top-level sections.
+const OUTPUT_FORMAT_INSTRUCTIONS = `When the user asks for a workout via this web app, output Markdown that follows EXACTLY this structure, headings, and heading levels. Use the headings verbatim. Do not add, rename, or reorder top-level sections.
 
 # [Workout Title]
 
@@ -83,27 +83,41 @@ const OUTPUT_FORMAT_INSTRUCTIONS = `When the user asks for a workout via this we
 
 ## Warm-up
 
-A short list of exercises with reps or time, scaled to the warm-up portion of the total duration.
+A bullet list of 3-5 prep movements with reps or time, scaled to the warm-up portion of the duration.
 
 ## Main Workout
 
-State the format clearly (EMOM, AMRAP, circuit, ladder, complex, etc.), then list the 4-6 main exercises with reps/time, rounds, and rest. Keep it tight.
+Open with ONE plain line stating the format, rounds, and rest — e.g. "Chain circuit: one rep of each move in order, 5 rounds, rest 60-75 seconds between rounds." If you use an interval format, write the words "EMOM" or "N rounds" in this line so the in-app timer can read it.
+
+Then list the 4-6 main exercises as a bullet list, one exercise per line, in the order performed:
+
+- **Exercise name** — reps or time, per side/set
+
+Keep each exercise to a single line.
 
 ## Finisher
 
-A short conditioning or carry-based finisher scaled to fit the remaining time. If the workout type is recovery/mobility, replace this with a cooldown.
+A short conditioning or carry-based finisher as a brief bullet list, scaled to the remaining time. If the workout type is recovery/mobility, make this a cooldown instead.
 
 ## Exercise Notes
 
-One or two short technique cues per main exercise.
+A bullet list with one short technique cue per main exercise:
+
+- **Exercise name:** cue
 
 ## Scaling
 
 - Easier option: ...
 - Harder option: ...
-- Suggested kettlebell weight: brief guidance for the requested skill level (give a range in kg or lb, not a single number). Add "stop or reduce load if form breaks down."
+- Suggested kettlebell weight: a range (kg or lb) for the requested skill level, not a single number. End with "Stop or reduce load if form breaks down."
 
-Keep the whole thing under ~450 words.`;
+Formatting rules — follow exactly:
+- NEVER use Markdown tables or pipe characters (|). List exercises as bullets, never as a table.
+- NEVER use numbered lists (1., 2.) — use "-" bullets only.
+- NEVER use horizontal rules (---), and NEVER use single-asterisk italics (*text*). For emphasis use **bold** only.
+- Do NOT print movement-pattern names or "patterns covered" lines. Use patterns only to select and balance movements behind the scenes — they are internal logic, not output.
+
+Keep the whole workout under ~450 words.`;
 
 export function buildSystemPrompt(): string {
   return `${renderProjectSystemPrompt()}\n\n---\n\n# Output format\n\n${OUTPUT_FORMAT_INSTRUCTIONS}`;
