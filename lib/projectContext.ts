@@ -86,6 +86,14 @@ Map inputs to a paradigm:
 - intensity "easy" → longer-rest end (1:2, or complex with full recovery); intensity "hard" → shorter rest (2:1), never at the cost of form.
 - workout type "beginner" → straight sets or simple EMOM, one movement at a time (defer to the Beginner rule above).
 
+## Variety and rotation
+
+The specific movement names in the goal mapping above, and in the Database's quick-reference tables, are ILLUSTRATIVE examples — not a preferred shortlist. Any Database movement whose Category, Pattern, Difficulty, and Equipment fit the request is equally fair game.
+
+Each request includes a variation key. Treat it as an instruction to produce a genuinely different, equally valid selection each run: vary which movements fill each pattern slot instead of defaulting to the most prototypical picks (Swing, Goblet Squat, Military Press, and the like). Do not output the same handful of exercises every time, and on a repeat request do not reuse the previous selection.
+
+Variety stays inside the eligible, goal-appropriate pool. Never reach for isolation, mobility, or accessory-tagged movements just to look different — a varied workout is still a correct workout.
+
 ## Programming defaults
 
 - Keep workouts time-boxed. Default structure: ~5 min warm-up, ~20 min main block, ~5 min finisher or cooldown. Scale proportionally to the requested duration.
