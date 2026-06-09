@@ -129,7 +129,14 @@ export function buildUserPrompt(inputs: WorkoutInputs): string {
       ? "No specific focus beyond the workout type."
       : LABELS.focus[inputs.focus];
 
+  // Per-request variation key. It lives in the (uncached) user prompt so that
+  // every request — including Regenerate, which resends identical inputs —
+  // differs, which keeps the model from collapsing onto the same selection.
+  const variationKey = Math.random().toString(36).slice(2, 10);
+
   return `Generate one kettlebell workout for me.
+
+Variation key: ${variationKey} — produce a fresh exercise selection for this key. Do not reuse a previous workout's exercise list; vary which movements fill each pattern slot while keeping the workout appropriate for the inputs below.
 
 Inputs:
 - Workout type: ${LABELS.workoutType[inputs.workoutType]}
