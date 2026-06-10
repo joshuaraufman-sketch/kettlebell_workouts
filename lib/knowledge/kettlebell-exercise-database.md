@@ -1,6 +1,6 @@
 # Kettlebell Exercise Database
 
-**Version:** 2.6
+**Version:** 2.7
 **Purpose:** Canonical reference for kettlebell and accessory exercises used in workout generation.
 
 \---
@@ -1744,6 +1744,226 @@ Schema (newer entries): **Sequence** (A -> B -> C) | **Run style** (Complex / Ch
 * **Prerequisites:** Hang Snatch, Single KB Front Squat, Hang Clean, Push Press, overhead mobility
 * **Typical reps:** 5 reps each per minute, alternating arms every minute. 20 min total = 10 rounds per arm. Light enough to lock out cleanly when fatigued.
 * **Note:** Demanding unilateral EMOM hitting explosive hinge, squat, and overhead push without setting the bell down. Hang variants of snatch and clean are used because dropping to a dead stop would interrupt the flow. Pick a bell that lets you finish all 20 reps clean — fatigue accumulates fast.
+
+### PD Special
+
+* **Sequence:** Single-Arm Row → One-Hand Swing → Thruster
+* **Run style:** Complex (block) — all reps of one before the next; one full block per arm, switch
+* **Pattern:** Pull, Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate-Advanced
+* **Prerequisites:** Single-Arm Row, One-Hand Swing, Clean, Thruster, overhead mobility
+* **Typical reps:** 5 + 5 + 5 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Default load is one bell, one arm; double the reps or go double-bell if the prescribed weight is too light. House convention for the Bellplex set: all complexes are 1 KB single-arm unless explicitly tagged 2-hand or 2-bell.
+
+### Zeus
+
+* **Sequence:** Single-Arm Row → Clean → Single KB Front Squat
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Pull, Hinge, Squat
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** Single-Arm Row, Clean, Single KB Front Squat
+* **Typical reps:** 6 + 5 + 4 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Pull, hinge, squat in equal measure with descending reps to manage fatigue on the squat finish.
+
+### Hercules
+
+* **Sequence:** One-Hand Swing → Clean → Push Press
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** One-Hand Swing, Clean, Push Press
+* **Typical reps:** 3 + 3 + 3 per arm; multiple rounds.
+* **Note:** Bellplex Training Systems. Classic ballistic-into-overhead triplet; low reps make it good for higher loads.
+
+### Poseidon
+
+* **Sequence:** One-Hand Swing → High Pull → Snatch
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Hinge
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Swing, High Pull, Snatch, overhead mobility
+* **Typical reps:** 4 + 3 + 2 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Pure ballistic-hinge progression — the high-pull step is exactly what snatch teachers use as a prerequisite drill, so this complex doubles as snatch reinforcement.
+
+### Achilles
+
+* **Sequence:** One-Hand Swing → Snatch → Overhead Reverse Lunge
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Hinge, Push, Squat
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** One-Hand Swing, Snatch, Overhead Reverse Lunge, overhead stability and mobility
+* **Typical reps:** 3 + 3 + 3 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. The overhead lunge under fatigue is the limiter — the bell starts tipping forward when the shoulder gives, so cap reps where lockout stays clean.
+
+### Sisyphus
+
+* **Sequence:** Two-Hand Squat Clean → Goblet Squat → Reverse Lunge (Goblet)
+* **Run style:** Complex (block)
+* **Pattern:** Hinge, Squat
+* **Equipment:** 1 KB (two hands on bell)
+* **Difficulty:** Beginner-Intermediate
+* **Prerequisites:** Goblet Clean, Goblet Squat, Reverse Lunge (Racked or Goblet)
+* **Typical reps:** 5 + 4 + 3/leg; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Two-hand grip throughout — no overhead, no single-arm work. Big leg burner with low coordination demand; usable on the conditioning side for beginners with the squat pattern dialed. Two-Hand Squat Clean = goblet clean caught in a squat instead of standing tall.
+
+### Gimli
+
+* **Sequence:** Two-Hand Swing → Deadlift High Pull → Goblet Squat
+* **Run style:** Complex (block)
+* **Pattern:** Hinge, Squat
+* **Equipment:** 1 KB (two hands on bell)
+* **Difficulty:** Beginner-Intermediate
+* **Prerequisites:** Two-Hand Swing, High Pull (or deadlift-style pull variant), Goblet Squat
+* **Typical reps:** 5 + 4 + 3; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Deadlift High Pull = pulled from a floor start (vs the swing-arc start of a standard High Pull). Two-hand grip throughout; beginner-friendly conditioning piece.
+
+### Aragorn
+
+* **Sequence:** Single-Arm Row → Clean → Push Press
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Pull, Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** Single-Arm Row, Clean, Push Press
+* **Typical reps:** 6 + 5 + 4 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Balanced pull/hinge/push triplet — drop-in alternative to Zeus when you want overhead instead of squat work.
+
+### Legolas
+
+* **Sequence:** Ballistic Row → Tactical Clean → Tactical Snatch
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Pull, Hinge
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Single-Arm Row, Clean, Snatch, overhead mobility
+* **Typical reps:** 4 + 4 + 4 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. "Tactical" cues a controlled, body-close pulling path on the clean and snatch — bell tracked tight to the ribs rather than swung out, lower fatigue cost than hardstyle ballistics. "Ballistic Row" adds an explosive pop at the top. Sub the standard versions if the tactical variants aren't trained.
+
+### Elrond
+
+* **Sequence:** Suitcase Deadlift → Clean → Push Press
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate
+* **Prerequisites:** Suitcase Deadlift, Clean, Push Press
+* **Typical reps:** 5 + 4 + 3 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Deadlift opener primes posterior chain before the ballistic work — good warm-up complex or low-skill option when grip is fried.
+
+### Gandalf
+
+* **Sequence:** One-Hand Swing → Tactical Clean → Thruster → Tactical Snatch → Windmill
+* **Run style:** Chain — one rep of each in order, repeat the chain for the prescribed reps
+* **Pattern:** Hinge, Push, Squat, Anti-rotation/Rotation
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Swing, Clean, Thruster, Snatch, Windmill, overhead mobility
+* **Typical reps:** 2 reps of the chain per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Five-movement chain hitting ballistic, ground-to-overhead, overhead squat, snatch, and lateral hinge in one rep. Highest skill demand of the Bellplex set; pick a bell you can move precisely.
+
+### Leonidas
+
+* **Sequence:** Clean → Push Press → Thruster
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate-Advanced
+* **Prerequisites:** Clean, Push Press, Thruster
+* **Typical reps:** 4 + 3 + 2 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Escalating leg-drive: strict-ish push press, then full thruster. Heavy on the shoulder by the end of each round.
+
+### Codi Special
+
+* **Sequence:** Single-Arm Row → One-Hand Swing → Snatch
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Pull, Hinge
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Single-Arm Row, One-Hand Swing, Snatch
+* **Typical reps:** 4 + 3 + 2 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Pull-into-ballistic-hinge triplet ending overhead. Same movement order as Big Mick; descending reps make the snatch the lowest-volume / highest-quality step.
+
+### Starky Boy
+
+* **Sequence:** Single-Arm Row → Dead Clean → Swing Clean → Thruster
+* **Run style:** Chain — one rep of each in order, repeat for prescribed reps
+* **Pattern:** Pull, Hinge, Push
+* **Equipment:** 1 KB
+* **Difficulty:** Intermediate-Advanced
+* **Prerequisites:** Single-Arm Row, Clean (dead-stop variant), Clean (swing variant), Thruster
+* **Typical reps:** 5 reps of the chain per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Two clean variants in one chain — dead clean (from the floor) immediately into a swing clean (from a backswing) trains both entry patterns under fatigue. Thruster finishes overhead.
+
+### Big Mick
+
+* **Sequence:** Single-Arm Row → One-Hand Swing → Snatch
+* **Run style:** Complex (block) — one full block per arm, switch
+* **Pattern:** Pull, Hinge
+* **Equipment:** 1 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Single-Arm Row, One-Hand Swing, Snatch
+* **Typical reps:** 3 + 4 + 5 per arm; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Same movement order as Codi Special but ascending — front-loads pull volume and ramps into the snatch as the highest-rep finisher. Pick a bell you can snatch for the full 5 unbroken.
+
+### King Kong
+
+* **Sequence:** Gorilla Row (L) → Gorilla Row (R) → Squat Clean → Thruster
+* **Run style:** Chain — one rep of each, repeat for prescribed reps
+* **Pattern:** Pull, Hinge, Squat, Push
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Gorilla Row, Double Clean, Double Front Squat, Thruster, overhead mobility
+* **Typical reps:** 5 reps of the chain; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Squat Clean = catch the double clean in a deep squat instead of standing tall, fusing double clean and double front squat into one rep. Gorilla Row braces on the off-hand bell, so the chain hits both sides of the back before the legs and overhead.
+
+### Devil's Tricycle
+
+* **Sequence:** Two-Hand Swing → Deadlift High Pull → Offset Squat Clean
+* **Run style:** Complex (block)
+* **Pattern:** Hinge, Squat
+* **Equipment:** 1 KB (two hands on bell)
+* **Difficulty:** Intermediate
+* **Prerequisites:** Two-Hand Swing, High Pull, Goblet Squat (asymmetric grip)
+* **Typical reps:** 6 + 6 + 3/side; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Offset Squat Clean = asymmetric two-handed grip (one hand high on the horn, one low) catching the clean in a squat — creates a rotational load through the trunk. Two-hand grip on the swing and high pull keeps this low-skill on the upper-body side.
+
+### DeGiuli
+
+* **Sequence:** Suitcase Deadlift (L) → Suitcase Deadlift (R) → Dead-Stop Swing
+* **Run style:** Chain — one rep of each (one deadlift per arm, then a two-hand dead-stop swing), repeat
+* **Pattern:** Hinge
+* **Equipment:** 1 KB
+* **Difficulty:** Beginner-Intermediate
+* **Prerequisites:** Suitcase Deadlift, Two-Hand Swing (dead-stop variant — park the bell between reps)
+* **Typical reps:** 6 reps of the chain; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Pure hinge complex — single-arm deadlift each side then a heavy dead-stop swing. Good "build-the-hinge" piece for beginners moving up to heavier swings.
+
+### Helldiver
+
+* **Sequence:** Swing → Snatch → Thruster
+* **Run style:** Chain — one rep of each, repeat for prescribed reps
+* **Pattern:** Hinge, Push
+* **Equipment:** 2 KB preferred (1 KB scalable)
+* **Difficulty:** Advanced
+* **Prerequisites:** (Double) Swing, (Double) Snatch, Thruster, overhead mobility
+* **Typical reps:** 5 reps of the chain; 3-5 rounds.
+* **Note:** Bellplex Training Systems. Continuous hinge-into-overhead chain. Double-bell version is brutal — thruster lands the bells on the shoulders coming out of the snatch lockout, so there's no rest between the eccentric and the next swing.
+
+### Worst Complex Ever
+
+* **Sequence:** Renegade Row → Double Clean → Thruster
+* **Run style:** Complex (block) — 10 reps of each, no drop
+* **Pattern:** Pull, Hinge, Push
+* **Equipment:** 2 KB
+* **Difficulty:** Advanced
+* **Prerequisites:** Renegade Row, Double Clean, Thruster, overhead mobility
+* **Typical reps:** 10 + 10 + 10; 1-3 rounds. Heavy bells.
+* **Note:** Bellplex Training Systems. The name is accurate. Ten renegade rows already trash the grip and core before the cleans start, and the thrusters at the end with a fried back are the punchline. Treat as a finisher, not a workout to repeat for volume.
 
 \---
 
