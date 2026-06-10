@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+  "sync-db": "node scripts/sync-db.mjs",
+  "sync-db:check": "node scripts/sync-db.mjs --check"
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
