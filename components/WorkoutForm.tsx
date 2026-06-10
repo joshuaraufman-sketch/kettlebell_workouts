@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { filterComplexes } from "@/lib/complexes";
 import type {
   Duration,
   Equipment,
@@ -57,6 +58,9 @@ export const DEFAULT_INPUTS: WorkoutInputs = {
   equipment: "one-kettlebell",
   intensity: "moderate",
   focus: "none",
+  useComplex: false,
+  complexName: "",
+  useEMOM: false,
 };
 
 interface Props {
@@ -66,6 +70,21 @@ interface Props {
 
 export default function WorkoutForm({ loading, onSubmit }: Props) {
   const [inputs, setInputs] = useState<WorkoutInputs>(DEFAULT_INPUTS);
+
+  const availableComplexes = useMemo(
+    () => filterComplexes(inputs.equipment, inputs.skillLevel),
+    [inputs.equipment, inputs.skillLevel],
+  );
+
+  // Clear stale complex selection when equipment/skill change invalidates it.
+  useEffect(() => {
+    if (
+      inputs.complexName &&
+      !availableComplexes.some((c) => c.name === inputs.complexName)
+    ) {
+      setInputs((prev) => ({ ...prev, complexName: "" }));
+    }
+  }, [availableComplexes, inputs.complexName]);
 
   function update<K extends keyof WorkoutInputs>(key: K, value: WorkoutInputs[K]) {
     setInputs((prev) => ({ ...prev, [key]: value }));
@@ -172,6 +191,76 @@ export default function WorkoutForm({ loading, onSubmit }: Props) {
         </select>
       </Field>
 
+      <div className="grid gap-1.5">
+        <span className="text-xs font-medium uppercase tracking-wide text-neutral-600 dark:text-neutral-400">
+          Structure
+        </span>
+        <div className="space-y-3">
+          <label className="flex cursor-pointer items-start gap-2.5 text-sm">
+            <input
+              type="checkbox"
+              checked={inputs.useComplex}
+              onChange={(e) => update("useComplex", e.target.checked)}
+              className={checkboxClass}
+            />
+            <div className="leading-snug">
+              <div className="font-medium text-neutral-800 dark:text-neutral-200">
+                Build around a complex
+              </div>
+              <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                Main section will be one named complex from the database.
+              </div>
+            </div>
+          </label>
+
+          {inputs.useComplex && (
+            <div className="ml-7">
+              <select
+                className={selectClass}
+                value={inputs.complexName}
+                onChange={(e) => update("complexName", e.target.value)}
+              >
+                <option value="">Auto (let generator pick)</option>
+                {availableComplexes.map((c) => (
+                  <option key={c.name} value={c.name}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+              {availableComplexes.length === 0 && (
+                <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                  No complexes match your current equipment and skill. Generator
+                  will pick freely.
+                </p>
+              )}
+            </div>
+          )}
+
+          <label className="flex cursor-pointer items-start gap-2.5 text-sm">
+            <input
+              type="checkbox"
+              checked={inputs.useEMOM}
+              onChange={(e) => update("useEMOM", e.target.checked)}
+              className={checkboxClass}
+            />
+            <div className="leading-snug">
+              <div className="font-medium text-neutral-800 dark:text-neutral-200">
+                EMOM
+              </div>
+              <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                Main section structured as Every Minute On the Minute.
+              </div>
+            </div>
+          </label>
+
+          {inputs.useComplex && inputs.useEMOM && (
+            <p className="ml-7 text-xs text-neutral-500 dark:text-neutral-400">
+              Both selected → complex will run on an EMOM cadence.
+            </p>
+          )}
+        </div>
+      </div>
+
       <button
         type="submit"
         disabled={loading}
@@ -196,6 +285,9 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 
 const selectClass =
   "w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-100";
+
+const checkboxClass =
+  "mt-0.5 h-4 w-4 shrink-0 rounded border-neutral-300 text-neutral-900 focus:ring-neutral-500 dark:border-neutral-600 dark:bg-neutral-950";
 
 function pillClass(active: boolean) {
   return [

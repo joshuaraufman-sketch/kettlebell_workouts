@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
+import { isValidComplexFor } from "@/lib/complexes";
 import {
   buildSystemPrompt,
   buildUserPrompt,
@@ -59,7 +60,29 @@ function parseInputs(body: unknown): WorkoutInputs | null {
   if (!FOCUSES.includes(focus)) return null;
   if (!DURATIONS.includes(duration)) return null;
 
-  return { workoutType, skillLevel, equipment, intensity, focus, duration };
+  const useComplex = Boolean(b.useComplex);
+  const useEMOM = Boolean(b.useEMOM);
+  const complexName =
+    typeof b.complexName === "string" ? b.complexName.trim() : "";
+
+  // If a specific complex was named, validate it against the user's equipment+skill.
+  if (useComplex && complexName !== "") {
+    if (!isValidComplexFor(complexName, equipment, skillLevel)) {
+      return null;
+    }
+  }
+
+  return {
+    workoutType,
+    skillLevel,
+    equipment,
+    intensity,
+    focus,
+    duration,
+    useComplex,
+    complexName,
+    useEMOM,
+  };
 }
 
 export async function POST(req: Request) {
