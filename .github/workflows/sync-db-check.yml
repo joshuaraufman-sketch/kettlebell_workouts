@@ -7,7 +7,7 @@ on:
       - 'lib/knowledge/kettlebell-exercise-database.ts'
       - 'scripts/sync-db.mjs'
   push:
-    branches: [main]
+    branches: [claude/laughing-cray-wDABJ]
     paths:
       - 'lib/knowledge/kettlebell-exercise-database.md'
       - 'lib/knowledge/kettlebell-exercise-database.ts'
