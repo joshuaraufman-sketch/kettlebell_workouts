@@ -35,6 +35,9 @@ export interface WorkoutInputs {
   equipment: Equipment;
   intensity: Intensity;
   focus: Focus;
+  useComplex: boolean;
+  complexName: string;
+  useEMOM: boolean;
 }
 
 const LABELS = {
@@ -134,7 +137,21 @@ export function buildUserPrompt(inputs: WorkoutInputs): string {
   // differs, which keeps the model from collapsing onto the same selection.
   const variationKey = Math.random().toString(36).slice(2, 10);
 
-  return `Generate one kettlebell workout for me.
+  const structural: string[] = [];
+
+  if (inputs.useComplex && inputs.complexName) {
+    structural.push(`Structure: Build the main section around the "${inputs.complexName}" complex specifically. Do not substitute.`);
+  } else if (inputs.useComplex) {
+    structural.push(`Structure: Build the main section around one specific named complex from the database. Pick one that fits the inputs above and state your choice.`);
+  }
+
+  if (inputs.useEMOM && !inputs.useComplex) {
+    structural.push(`Structure: Main section is EMOM.`);
+  } else if (inputs.useEMOM && inputs.useComplex) {
+    structural.push(`Structure: Run the chosen complex on an EMOM cadence.`);
+  }
+
+  const body = `Generate one kettlebell workout for me.
 
 Variation key: ${variationKey} — produce a fresh exercise selection for this key. Do not reuse a previous workout's exercise list; vary which movements fill each pattern slot while keeping the workout appropriate for the inputs below.
 
@@ -145,4 +162,6 @@ Inputs:
 - Equipment: ${LABELS.equipment[inputs.equipment]}
 - Intensity: ${LABELS.intensity[inputs.intensity]}
 - Optional focus: ${focusLine}`;
+
+  return structural.length > 0 ? `${body}\n\n${structural.join("\n")}` : body;
 }

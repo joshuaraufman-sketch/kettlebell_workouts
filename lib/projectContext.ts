@@ -86,6 +86,33 @@ Map inputs to a paradigm:
 - intensity "easy" → longer-rest end (1:2, or complex with full recovery); intensity "hard" → shorter rest (2:1), never at the cost of form.
 - workout type "beginner" → straight sets or simple EMOM, one movement at a time (defer to the Beginner rule above).
 
+## Structural directives
+
+When the user request specifies a structural directive, treat it as a hard constraint on the main section of the workout (between warmup and finisher).
+
+**Complex-based structure**
+
+- If a specific complex is named, use that exact complex from the database. Do not substitute.
+- If "auto" is specified, pick one complex from the database that fits the goal, experience level, equipment, and duration. State the choice on its own line and give a one-sentence justification.
+- Program the chosen complex with sets/rounds/rest appropriate to the session length. Reasonable scaling: roughly 60-70% of the total duration is complex work (e.g. 18-20 min in a 30-min session, 8-10 min in a 15-min session).
+- Use the database's "Typical reps" for the complex. Do not invent new rep schemes.
+- The movement-pattern balance and exercise-variation rules do not apply to the main section when a complex is chosen — the complex defines the movements.
+
+**EMOM structure**
+
+- EMOM block length = total duration − warmup time − finisher time.
+- Rep counts should leave roughly 15-30 seconds of rest per minute at moderate intensity. Hard targets less rest, easy targets more.
+- Typical EMOM rep ranges: ballistics 5-10/min, grinds 2-5/min. Use lower end for double-bell work and heavier loads.
+- Alternate sides each minute for unilateral work, or state side per minute.
+- Inside EMOM, ladders should state the climb explicitly (e.g. "1-2-3-4-5, reset, repeat for 20 min").
+
+**Combined (complex + EMOM)**
+
+- Default: one full round of the complex per minute. Use this when a round fits comfortably in 30-45 seconds at the chosen load.
+- If a single round of the complex doesn't fit in a minute (high-rep complexes like Worst Complex Ever, 10x10x10), instead EMOM each movement separately (min 1: movement A, min 2: movement B, etc.), or use E2MOM and state the choice on its own line with a one-sentence reason.
+
+When none of these directives is set, generate the main section freely per the existing rules.
+
 ## Variety and rotation
 
 The specific movement names in the goal mapping above, and in the Database's quick-reference tables, are ILLUSTRATIVE examples — not a preferred shortlist. Any Database movement whose Category, Pattern, Difficulty, and Equipment fit the request is equally fair game.
